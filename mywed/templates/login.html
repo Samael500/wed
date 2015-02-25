@@ -1,16 +1,23 @@
+{% load compress %}
 <!DOCTYPE HTML>
 <html>
     <head>
+
         <title>Добро пожаловать!</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <script src="{{ STATIC_URL }}aerial/js/skel.min.js"></script>
-        <script src="{{ STATIC_URL }}aerial/js/init.js"></script>
-        <noscript>
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400italic,300,300italic,400&subset=latin,cyrillic" media="all" rel="stylesheet" type="text/css" />
+
+        {% compress js %}
+            <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>
+            {# // <script src="{{ STATIC_URL }}aerial/js/skel.min.js"></script> #}
+            {# // <script src="{{ STATIC_URL }}aerial/js/init.js"></script> #}
+        {% endcompress %}
+        {# {% compress css %} #}
             <link rel="stylesheet" href="{{ STATIC_URL }}aerial/css/skel.css" />
             <link rel="stylesheet" href="{{ STATIC_URL }}aerial/css/style.css" />
             <link rel="stylesheet" href="{{ STATIC_URL }}aerial/css/style-wide.css" />
             <link rel="stylesheet" href="{{ STATIC_URL }}aerial/css/style-noscript.css" />
-        </noscript>
+        {# {% endcompress %} #}
     </head>
 
     <body class="loading">
@@ -21,24 +28,24 @@
 
                 <!-- Header -->
                     <header id="header">
-                        <h1>Adam Jensen</h1>
-                        <p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>
-<!--                         <nav>
+                        <h1>Добро пожаловать</h1>
+                        <p>Или вход только по приглашениям</p>
+
+                        <div>
+                                <input type="text" name="query" id="query" value="" placeholder="Query">
+                                <input type="submit" value="Search" class="fit">
+                        </div>
+                         <nav>
                             <ul>
                                 <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li>dd</li>
                                 <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
                                 <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
                                 <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
                                 <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
                             </ul>
-                        </nav> -->
+                        </nav>
                     </header>
-
-                <!-- Footer -->
-                    <footer id="footer">
-                        <span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-                    </footer>
-                
             </div>
         </div>
     </body>

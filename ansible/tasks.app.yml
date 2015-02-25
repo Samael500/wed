@@ -5,6 +5,8 @@
 - name: Install required python packages with pip from wheels archive
   shell: cd /home/vagrant/proj && venv/bin/pip install --no-index -f wheels/ -r requirements.txt
   sudo: no
+- name: Compress static files
+  django_manage: command=compress app_path={{ root_dir }} virtualenv=/home/vagrant/proj/venv
 - name: Collectstatic
   django_manage: command=collectstatic app_path={{ root_dir }} virtualenv=/home/vagrant/proj/venv
 - name: Sync database

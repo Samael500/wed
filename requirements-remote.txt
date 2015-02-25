@@ -5,3 +5,4 @@ pep8==1.5.7
 psycopg2==2.5.4
 pylama==6.0.1
 django-rainbowtests==0.2.1
+-e git+https://github.com/django-compressor/django-compressor.git@master#egg=django_compressor

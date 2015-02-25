@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # mywed apps
     'guests',
+    'compressor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,6 +97,17 @@ TEST_RUNNER = 'rainbowtests.test.runner.RainbowDiscoverRunner'
 
 TEMPLATE_DIRS = (
     join(BASE_DIR, 'mywed', 'templates'),
+)
+
+COMPRESS_ROOT = join(BASE_DIR, 'mywed', 'static')
+
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 try:
