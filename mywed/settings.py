@@ -10,7 +10,13 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import join
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+if __name__ in ['settings', 'mywed.settings']:
+    import sys
+    sys.path.insert(0, join(BASE_DIR, 'mywed'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -20,9 +26,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '5#1yw)g=zo9qfft-ynl*if19_s%^7zr_9o!@=bw1a)80umkzft'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-TEMPLATE_DEBUG = True
+DEBUG = False
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -53,27 +58,25 @@ ROOT_URLCONF = 'mywed.urls'
 WSGI_APPLICATION = 'mywed.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
+# Database connection
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mywed',
+        'USER': 'mywed',
+        'PASSWORD': '80umkzft',
+        'HOST': '127.0.0.1',
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'ru'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -81,3 +84,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'mywed/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media/'
+
+TEST_RUNNER = 'rainbowtests.test.runner.RainbowDiscoverRunner'
+
+TEMPLATE_DIRS = (
+    join(BASE_DIR, 'mywed', 'templates'),
+)
+
+try:
+    from settings_local import *  # noqa
+except ImportError:
+    pass

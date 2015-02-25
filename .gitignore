@@ -57,3 +57,4 @@ target/
 venv/
 mywed/media/
 .vagrant
+settings_local.py

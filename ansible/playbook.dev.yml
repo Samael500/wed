@@ -7,7 +7,7 @@
     - include: tasks.common.yml
     - include: tasks.postgresql.yml
       vars:
-        postgres_password: a1f0bd9
+        postgres_password: 80umkzft
     - include: tasks.nginx.yml
       vars:
         http_host: 10.1.1.10

@@ -1,0 +1,15 @@
+# Local settings
+
+# Turn debug mode on
+DEBUG = True
+TEMPLATE_DEBUG = True
+
+# Database connection
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mywed',
+        'USER': 'mywed',
+        'PASSWORD': '80umkzft',
+    }
+}
