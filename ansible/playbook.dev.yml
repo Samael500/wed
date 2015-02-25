@@ -1,0 +1,21 @@
+---
+
+- hosts: all
+  sudo: yes
+  remote_user: vagrant
+  tasks:
+    - include: tasks.common.yml
+    - include: tasks.postgresql.yml
+      vars:
+        postgres_password: a1f0bd9
+    - include: tasks.nginx.yml
+      vars:
+        http_host: 10.1.1.10
+        http_port: 80
+        root_dir: /home/vagrant/proj
+    # - include: tasks.app.yml
+    #   vars:
+    #     root_dir: /home/vagrant/proj
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted
