@@ -52,3 +52,8 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#### CUSTOM ###
+venv/
+mywed/media/
+.vagrant

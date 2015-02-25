@@ -48,8 +48,6 @@
   apt: name=libxml2-dev state=latest
 - name: Install libxslt1-dev
   apt: name=libxslt1-dev state=latest
-- name: Install gettext
-  apt: name=gettext state=latest
 # Build python 3.4
 - name: Download Python 3.4 sources
   get_url: url=https://www.python.org/ftp/python/3.4.2/Python-3.4.2.tgz dest=/tmp
