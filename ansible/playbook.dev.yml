@@ -10,7 +10,7 @@
         postgres_password: 80umkzft
     - include: tasks.nginx.yml
       vars:
-        http_host: 10.1.1.10
+        http_host: 10.1.1.111
         http_port: 80
         root_dir: /home/vagrant/proj
     - include: tasks.app.yml

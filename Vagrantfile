@@ -1,12 +1,12 @@
 Vagrant.configure(2) do |config|
   # Virtual machine parameters
   config.vm.box = "chef/debian-7.6"
-  config.vm.network "private_network", ip: "10.1.1.10"
+  config.vm.network "private_network", ip: "10.1.1.111"
   config.vm.synced_folder ".", "/home/vagrant/proj"
   config.vm.hostname = "mywed"
   config.vm.post_up_message = "mywed dev server successfuly started.
     Connect to host with:
-    http://10.1.1.10/
+    http://10.1.1.111/
     or over ssh with `vagrant ssh`
 
     Admin user credentials:
