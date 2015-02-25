@@ -9,7 +9,7 @@ class Guest(models.Model):
 
     user = models.ForeignKey(User, verbose_name='Пользователь', blank=True, null=True, related_name='guest_profile')
     user_key = models.CharField(verbose_name='Код доступа', max_length=8, unique=True, validators=[RegexValidator(
-        '^[\w\d]{8}$', message='Код доступа должен состоять из 8 символов (английские буквы или цифры).')])
+        '^[a-zA-Z\d]{8}$', message='Код доступа должен состоять из 8 символов (английские буквы или цифры).')])
 
     def save(self, *args, **kwargs):
         """ create user on save """

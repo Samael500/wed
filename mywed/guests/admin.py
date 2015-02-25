@@ -21,7 +21,6 @@ class GuestAdmin(admin.ModelAdmin):
     get_last_name.admin_order_field = 'user__last_name'
 
 
-
 class GuestAdminInline(admin.TabularInline):
 
     """ Guest inline to user """
