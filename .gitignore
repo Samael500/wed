@@ -56,5 +56,7 @@ target/
 #### CUSTOM ###
 venv/
 mywed/media/
+mywed/static/grappelli/
+mywed/static/admin/
 .vagrant
 settings_local.py
