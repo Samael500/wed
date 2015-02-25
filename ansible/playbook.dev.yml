@@ -13,9 +13,9 @@
         http_host: 10.1.1.10
         http_port: 80
         root_dir: /home/vagrant/proj
-    # - include: tasks.app.yml
-    #   vars:
-    #     root_dir: /home/vagrant/proj
+    - include: tasks.app.yml
+      vars:
+        root_dir: /home/vagrant/proj
   handlers:
     - name: restart nginx
       service: name=nginx state=restarted
