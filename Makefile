@@ -14,6 +14,11 @@ lint:
 test:
 	venv/bin/python manage.py test mywed -v 2
 
+ci_test:
+	coverage run --source='.' manage.py test mywed
+	coverage report
+	make lint
+
 syncdb:
 	venv/bin/python manage.py syncdb
 
