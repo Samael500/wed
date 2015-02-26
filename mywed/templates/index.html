@@ -1,27 +1,44 @@
-{% extends 'base.html' %}
+{% extends 'base_site.html' %}
 
-{%block title %}Главная {{ block.super }}{% endblock%}
+{% block title %}Главная {{ block.super }}{% endblock %}
+
+{% block nav %}
+    {% with 'index' as location %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
 
 {% block content %}
-    <div id="header">
-            <div class="inner">
-                <header>
-                    <h1>Добро пожаловать</h1>
-                    <hr />
-                    <p>Вход только по приглашениям</p>
-                </header>
-                <footer>
-                    <section class="special">
-                        <form action="" method="POST">
-                            {% csrf_token %}
-                            <ul class="inline">
-                                <li>{{ form.user_key }}
-                                <li><input type="submit" value="Войти" class="alt" />
-                            </ul>
-                            {% include 'helpers/field_error.html' with field=form.user_key %}
-                        </form>
-                    </section>
-                </footer>
+        <!-- Main -->
+            <div id="main" class="wrapper style1">
+                <div class="container">
+                    <article class="special">
+                        <header>
+                            <h2>Свадьба в синем цвете</h2>
+                        </header>
+                        <p>
+                            Свадьбы, исполненные в определенном цвете стали уже давно классическими. Традиционный белый никого не удивляет,
+                            а разбавленный ярким, сочным оригинальным цветом он превращает торжество в сказочное событие. Синий цвет – это
+                            королевский выбор.
+                        </p>
+                    </article>
+                </div>
             </div>
-    </div>
+
+{% include 'carousel.html' %}
+
+            <div id="main" class="wrapper style1">
+                <div class="container">
+                    <article class="special">
+                        <p>
+                            В прошлые столетия синяя краска для материи стоила дорого, поэтому одежду из синего насыщенного материала могли
+                            купить только очень богатые люди. Синий цвет может различаться оттенками. Это лазурный, индиго, ультрамарин,
+                            цвет океана, сапфиров и цвет неба. Психологи выяснили, что синий дарит спокойствие и ассоциируется с верностью.
+                            Это параллель проводится со счастливым браком. Одновременно этот цвет символизирует высоту,  духовную свободу,
+                            воздух. Эти особенности являются главным акцентом на свадьбе.
+                        </p>
+                    </article>
+                </div>
+            </div>
+
 {% endblock %}
