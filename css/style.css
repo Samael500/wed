@@ -752,9 +752,13 @@
 		text-align: center;
 		padding: 2.5em 0 2em 0;
 		cursor: default;
-		width: 100vw;
-		height: 100vh;
 	}
+
+		#header.full_page
+		{
+			width: 100vw;
+			height: 100vh;
+		}
 
 		.homepage #header
 		{
