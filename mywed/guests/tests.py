@@ -84,3 +84,19 @@ class GuestFormssTestCase(TestCase):
         valid_labels = dict(user_key='Код доступа', )
         for name, label in valid_labels.items():
             self.assertEqual(self.fields.get(name).label, label)
+
+    def test_availability_fields(self):
+        """ Test availability fields  """
+        available_fields = ('user_key', )
+        for name, field in self.fields.items():
+            self.assertIn(name, available_fields)
+
+    def test_required_fields(self):
+        """ Check field requirement """
+        for name in ('user_key', ):
+            self.assertTrue(self.form.fields[name].required)
+
+    def test_user_key_validation(self):
+        """ Test validation user_key """
+        form = self.form_class(data=dict())
+        self.assertIn('Обязательно укажите срок доставки.', form.errors.get('user_key')[0])
