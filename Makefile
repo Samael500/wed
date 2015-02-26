@@ -15,7 +15,7 @@ test:
 	venv/bin/python manage.py test mywed -v 2
 
 ci_test:
-	coverage run --source='.' manage.py test mywed
+	coverage run --source='.' manage.py test mywed -v 2
 	coverage report
 	make lint
 

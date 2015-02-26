@@ -120,7 +120,6 @@ try:
 except ImportError:
     pass
 
-
 try:
     if 'TRAVIS' in os.environ:
         from settings_travis import *  # noqa
