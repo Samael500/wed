@@ -2,9 +2,10 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from guests.models import Guest
+from guests.forms import LoginForm
 
 
-class GuestTestCase(TestCase):
+class GuestModelsTestCase(TestCase):
 
     """ Test guest model's """
 
@@ -47,15 +48,15 @@ class GuestTestCase(TestCase):
         self.assertEquals(instance, instance_db)
         self.assertEquals(instance.user_key, instance.user.username)
 
-    def test_guest_change_username(self):
-        """ Change guest user_key - change user name """
+    def test_guest_change_user_key(self):
+        """ Change guest user_key - change user user_key """
         instance = self.model(**self.kwargs)
         instance.save()
         self.assertEquals(instance.user_key, instance.user.username)
         # change user key
         instance.user_key = '77777777'
         instance.save()
-        self.assertEquals(instance.user_key, instance.user.username)
+        self.assertEquals(self.kwargs['user_key'], instance.user.username)
         self.assertEquals(instance.user_key, '77777777')
 
     def test_guest_wrong_userkey(self):
@@ -66,3 +67,20 @@ class GuestTestCase(TestCase):
         self.assertRaises(ValidationError, instance.full_clean)
         instance = self.model(user_key='1234567')
         self.assertRaises(ValidationError, instance.full_clean)
+
+
+class GuestFormssTestCase(TestCase):
+
+    """ Test guest form's """
+
+    form_class = LoginForm
+
+    def setUp(self):
+        self.form = self.form_class()
+        self.fields = self.form.fields
+
+    def test_labels(self):
+        """ Test fields labels """
+        valid_labels = dict(user_key='Код доступа', )
+        for name, label in valid_labels.items():
+            self.assertEqual(self.fields.get(name).label, label)

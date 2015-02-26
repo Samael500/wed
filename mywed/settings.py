@@ -31,6 +31,8 @@ TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = 'login'
+
 
 # Application definition
 
@@ -42,9 +44,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # custom apps
+    'compressor',
     # mywed apps
     'guests',
-    'compressor',
+    'index',
+    'news',
 )
 
 MIDDLEWARE_CLASSES = (

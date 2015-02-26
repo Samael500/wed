@@ -16,7 +16,6 @@ class Guest(models.Model):
         if not self.pk and self.user is None:
             self.user = User.objects.create_user(username=self.user_key, password=self.user_key)
         else:
-            self.user.username = self.user_key
             self.user.set_password(self.user_key)
             self.user.save()
         super().save(*args, **kwargs)
