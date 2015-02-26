@@ -11,5 +11,6 @@ DATABASES = {
         'NAME': 'mywed',
         'USER': 'mywed',
         'PASSWORD': '80umkzft',
+        'HOST': '127.0.0.1',
     }
 }

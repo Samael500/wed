@@ -58,5 +58,6 @@ venv/
 mywed/media/
 mywed/static/grappelli/
 mywed/static/admin/
+mywed/static/CACHE/
 .vagrant
 settings_local.py
