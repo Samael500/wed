@@ -2,51 +2,51 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-
-        <title>Добро пожаловать!</title>
+        <title>Helios by HTML5 UP</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <link href="http://fonts.googleapis.com/css?family=Roboto:400italic,300,300italic,400&subset=latin,cyrillic" media="all" rel="stylesheet" type="text/css" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
 
-        {% compress js %}
-            <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>
-            {# // <script src="{{ STATIC_URL }}aerial/js/skel.min.js"></script> #}
-            {# // <script src="{{ STATIC_URL }}aerial/js/init.js"></script> #}
-        {% endcompress %}
-        {# {% compress css %} #}
-            <link rel="stylesheet" href="{{ STATIC_URL }}aerial/css/skel.css" />
-            <link rel="stylesheet" href="{{ STATIC_URL }}aerial/css/style.css" />
-            <link rel="stylesheet" href="{{ STATIC_URL }}aerial/css/style-wide.css" />
-            <link rel="stylesheet" href="{{ STATIC_URL }}aerial/css/style-noscript.css" />
-        {# {% endcompress %} #}
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400italic,300,300italic,400,600,600italic&subset=latin,cyrillic" />
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.dropotron.min.js"></script>
+        <script src="js/jquery.scrolly.min.js"></script>
+        <script src="js/jquery.onvisible.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/skel-layers.min.js"></script>
+        <script src="js/init.js"></script>
+        <noscript>
+            <link rel="stylesheet" href="css/skel.css" />
+            <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/style-desktop.css" />
+            <link rel="stylesheet" href="css/style-noscript.css" />
+        </noscript>
+
     </head>
+    <body class="homepage">
 
-    <body class="loading">
-        <div id="wrapper">
-            <div id="bg"></div>
-            <div id="overlay"></div>
-            <div id="main">
-
-                <!-- Header -->
-                    <header id="header">
-                        <h1>Добро пожаловать</h1>
-                        <p>Или вход только по приглашениям</p>
-
-                        <div>
-                                <input type="text" name="query" id="query" value="" placeholder="Query">
-                                <input type="submit" value="Search" class="fit">
-                        </div>
-                         <nav>
-                            <ul>
-                                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                                <li>dd</li>
-                                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                                <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-                                <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-                                <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-                            </ul>
-                        </nav>
-                    </header>
+        <!-- Header -->
+            <div id="header">
+                        
+                <!-- Inner -->
+                    <div class="inner">
+                        <header>
+                            <h1>Добро пожаловать</h1>
+                            <hr />
+                            <p>Вход только по приглашениям</p>
+                        </header>
+                        <footer>
+                            <article class="special">
+                                <form action="#" method="POST" class="4u inline">
+                                    <ul class="inline">
+                                        <li><input type="text" name="user_key" placeholder="Введите код доступа"/>
+                                        <li><input type="submit" value="Войти" class="alt" />
+                                    </ul>
+                                </form>
+                            </article>
+                        </footer>
+                    </div>
             </div>
-        </div>
     </body>
 </html>
