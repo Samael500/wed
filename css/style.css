@@ -471,7 +471,7 @@
 			{
 				color: #ff0000;
 			}
-
+				
 			form input[type="text"],
 			form input[type="email"],
 			form input[type="password"],
@@ -515,6 +515,16 @@
 					background: #fff;
 					border-color: #df7366;
 				}
+
+				form input[type="text"].error,
+				form input[type="email"].error,
+				form input[type="password"].error,
+				form select.error,
+				form textarea.error
+				{
+					border: solid 5px #ff0000;
+				}
+
 
 				form .formerize-placeholder
 				{
