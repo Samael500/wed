@@ -11,8 +11,8 @@
                     <p>Вход только по приглашениям</p>
                 </header>
                 <footer>
-                    <article class="special">
-                        <form action="#" method="POST" class="4u inline">
+                    <section class="special">
+                        <form action="#" method="POST">
                             {% csrf_token %}
                             <ul class="inline">
                                 <li>{{ form.user_key }}
@@ -20,7 +20,7 @@
                             </ul>
                             {% include 'helpers/field_error.html' with field=form.user_key %}
                         </form>
-                    </article>
+                    </section>
                 </footer>
             </div>
     </div>
