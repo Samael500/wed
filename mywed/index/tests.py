@@ -19,7 +19,7 @@ class GuestViewsTestCase(TestCase):
         self.kwargs = dict(user_key='12345678')
         self.login_url = reverse('login')
         self.index_url = reverse('index')
-        guest = Guest.objects.create(**self.kwargs)
+        Guest.objects.create(**self.kwargs)
 
     def test_index_200(self):
         """ Test open index page """

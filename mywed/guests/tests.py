@@ -127,7 +127,7 @@ class GuestViewsTestCase(TestCase):
         # create guest
         self.kwargs = dict(user_key='12345678')
         self.login_url = reverse('login')
-        guest = Guest.objects.create(**self.kwargs)
+        Guest.objects.create(**self.kwargs)
 
     def test_guest_200(self):
         """ Test open login page """

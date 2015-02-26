@@ -24,5 +24,5 @@ class Guest(models.Model):
         return self.user_key
 
     class Meta:
-        verbose_name='Гость'
-        verbose_name_plural='Гости'
+        verbose_name = 'Гость'
+        verbose_name_plural = 'Гости'
