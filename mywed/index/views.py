@@ -5,4 +5,4 @@ class IndexView(TemplateView):
 
     """ Index view class """
 
-    template_name = 'base.html'
+    template_name = 'index.html'

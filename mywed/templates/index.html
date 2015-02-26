@@ -1,14 +1,6 @@
 {% extends 'base.html' %}
 
-{%block title %}Добро пожаловать {{ block.super }}{% endblock%}
-
-{% block extend_scripts%}
-<script type="text/javascript">
-$(document).ready(function() {
-    $('div[data-args="navPanel"]').remove();
-});
-</script>
-{% endblock %}
+{%block title %}Главная {{ block.super }}{% endblock%}
 
 {% block content %}
     <div id="header">
@@ -20,7 +12,7 @@ $(document).ready(function() {
                 </header>
                 <footer>
                     <section class="special">
-                        <form action="{% url 'login' %}" method="POST">
+                        <form action="" method="POST">
                             {% csrf_token %}
                             <ul class="inline">
                                 <li>{{ form.user_key }}

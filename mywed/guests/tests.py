@@ -1,8 +1,11 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.core.urlresolvers import reverse
 from guests.models import Guest
 from guests.forms import LoginForm
+
+import http
 
 
 class GuestModelsTestCase(TestCase):
@@ -69,7 +72,7 @@ class GuestModelsTestCase(TestCase):
         self.assertRaises(ValidationError, instance.full_clean)
 
 
-class GuestFormssTestCase(TestCase):
+class GuestFormsTestCase(TestCase):
 
     """ Test guest form's """
 
@@ -98,5 +101,40 @@ class GuestFormssTestCase(TestCase):
 
     def test_user_key_validation(self):
         """ Test validation user_key """
+        # create user and disabled it
+        guest = Guest.objects.create(user_key='12345678')
+        guest.user.is_active = False
+        guest.user.save()
+        # check validation errors
         form = self.form_class(data=dict())
-        self.assertIn('Обязательно укажите срок доставки.', form.errors.get('user_key')[0])
+        self.assertIn('Обязательное поле.', form.errors.get('user_key')[0])
+        form = self.form_class(data=dict(user_key='asdffdasdfa'))
+        self.assertIn('Не верный код доступа.', form.errors.get('user_key')[0])
+        form = self.form_class(data=dict(user_key='12345678'))
+        self.assertIn('Аккаунт отключен.', form.errors.get('user_key')[0])
+        # correct validate
+        guest.user.is_active = True
+        guest.user.save()
+        form = self.form_class(data=dict(user_key='12345678'))
+        self.assertTrue(form.errors.get('user_key') is None)
+
+
+class GuestViewsTestCase(TestCase):
+
+    """ Test guest view's """
+
+    def setUp(self):
+        # create guest
+        self.kwargs = dict(user_key='12345678')
+        self.login_url = reverse('login')
+        guest = Guest.objects.create(**self.kwargs)
+
+    def test_guest_200(self):
+        """ Test open login page """
+        response = self.client.get(self.login_url)
+        self.assertEquals(response.status_code, http.client.OK)
+
+    def test_guest_login(self):
+        """ Test login user """
+        response = self.client.post(self.login_url, data=self.kwargs)
+        self.assertEquals(response.status_code, http.client.FOUND)
