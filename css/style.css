@@ -152,7 +152,7 @@
 		border-top: solid 1px rgba(128,128,128,0.2);
 		border-bottom: solid 1px rgba(128,128,128,0.2);
 	}
-	
+
 		hr:before,
 		hr:after
 		{
@@ -736,6 +736,13 @@
 		{
 			padding-top: 0;
 		}
+
+		.wrapper.style3
+		{
+			margin: 2em 2em 2em 2em;
+			padding: 2em 2em 2em 2em;
+		}
+
 
 /*********************************************************************************/
 /* Header                                                                        */
