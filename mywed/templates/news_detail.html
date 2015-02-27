@@ -1,0 +1,18 @@
+{% extends 'base_site.html' %}
+
+{% block title %}Новости {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+
+<article class="wrapper style3">
+    <time datetime="{{ object.pub_date|date:'Y-m-d' }}" class="timestamp">{{ object.pub_date|date:'d E Y' }}</time>
+    <h2>{{ object.title }}</h2>
+    <p>{{ object.text }}</p>
+</article>
+
+</div>
+
+{% endblock %}
