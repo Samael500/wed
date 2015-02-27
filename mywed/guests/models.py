@@ -21,7 +21,7 @@ class Guest(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.user_key
+        return str(self.user_key)
 
     class Meta:
         verbose_name = 'Гость'

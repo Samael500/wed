@@ -1,0 +1,28 @@
+{% extends 'base_site.html' %}
+
+{% block title %}Новости {{ block.super }}{% endblock %}
+
+{% block nav %}
+    {% with 'news' as location %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+
+<article class="module module-blogpost" id="post-196605">
+
+          <time datetime="2015-02-23" class="bar-time">
+            February 23, 2015          </time>
+
+          <h2>
+            <a href="https://css-tricks.com/dropdown-menus-with-more-forgiving-mouse-movement-paths/">
+              Dropdown Menus with More Forgiving Mouse Movement Paths            </a>
+          </h2>
+
+          <p>This is a fairly old UX concept that I haven't heard talked about in a while, but is still relevant in the case of multi-level dropdown menus. A fine-grained pointer like a mouse sometimes has to travel through pretty narrow corridors to accurately get where it needs to in a dropdown menu. It's easy to screw up (have the mouse pointer leave the path) and be penalized by having it close up on you. Perhaps we can make that less …</p>
+          <a class="read-article" href="https://css-tricks.com/dropdown-menus-with-more-forgiving-mouse-movement-paths/">Read Article →</a>
+
+        </article>
+
+{% endblock %}
