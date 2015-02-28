@@ -46,10 +46,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # custom apps
     'compressor',
+    'pure_pagination',
     # mywed apps
     'guests',
     'index',
     'news',
+    'helpers',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -114,6 +116,13 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 )
+
+
+PAGINATE_BY = 1#5
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 2,
+    'MARGIN_PAGES_DISPLAYED': 2,
+}
 
 try:
     from settings_local import *  # noqa
