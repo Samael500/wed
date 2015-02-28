@@ -50,6 +50,8 @@ class GuestModelsTestCase(TestCase):
         instance_db = self.model.objects.get(**self.kwargs)
         self.assertEquals(instance, instance_db)
         self.assertEquals(instance.user_key, instance.user.username)
+        # check str
+        self.assertEquals(self.kwargs['user_key'], str(instance))
 
     def test_guest_change_user_key(self):
         """ Change guest user_key - change user user_key """

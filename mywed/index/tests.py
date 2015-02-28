@@ -5,9 +5,9 @@ from guests.models import Guest
 import http
 
 
-class GuestViewsTestCase(TestCase):
+class IndexViewsTestCase(TestCase):
 
-    """ Test guest view's """
+    """ Test index view's """
 
     def login_guests(self):
         """ Login user guest """
