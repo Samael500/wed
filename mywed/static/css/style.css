@@ -870,15 +870,16 @@
 
 	#nav
 	{
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		text-align: center;
-		padding: 1.5em 0 1.5em 0;
+		padding: 1.1em 0 1.1em 0;
 		z-index: 1;
 		overflow: hidden;
-		text-shadow: none;
+		background-color: rgba(0,0,0,0.75);
+		color: #fff;
 	}
 	
 		#nav > ul
