@@ -100,7 +100,7 @@
 	
 		a:hover
 		{
-			color: #ef8376;
+			color: #00BFFF;
 			border-bottom-color: transparent;
 		}
 
@@ -396,7 +396,7 @@
 					
 						ul.icons li a:hover
 						{
-							color: #ef8376;
+							color: #00BFFF;
 						}
 
 			ul.inline
@@ -429,7 +429,7 @@
 					
 						ul.inline li a:hover
 						{
-							color: #ef8376;
+							color: #00BFFF;
 						}
 		
 		ol
@@ -513,7 +513,7 @@
 				form textarea:focus
 				{
 					background: #fff;
-					border-color: #df7366;
+					border-color: #0086b3;
 				}
 
 				form input[type="text"].error,
@@ -614,7 +614,7 @@
 		{
 			position: relative;
 			display: inline-block;
-			background: #df7366;
+			background: #0086b3;
 			color: #fff;
 			min-width: 5em;
 			text-align: center;
@@ -638,7 +638,7 @@
 			.button:hover
 			{
 				color: #fff;
-				background: #ef8376;
+				background: #00BFFF;
 			}
 			
 			input[type="button"].alt,
@@ -986,7 +986,7 @@
 
 			.dropotron li:hover
 			{
-				color: #ef8376;
+				color: #00BFFF;
 			}
 
 			.dropotron li a,
@@ -1250,7 +1250,7 @@
 			.carousel .forward:hover:before,
 			.carousel .backward:hover:before
 			{
-				background-color: rgba(239,131,118, 0.75);
+				background-color: rgba(0,191,255,0.75);
 			}
 
 		.carousel .reel
