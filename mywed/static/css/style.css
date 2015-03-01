@@ -403,6 +403,7 @@
 			{
 				position: relative;
 				display: inline-block;
+				vertical-align: middle;
 				padding: 0.35em 0.35em 0.35em 0.35em;
 				font-size: 1.25em;
 				cursor: default;
@@ -411,6 +412,7 @@
 				ul.inline li
 				{
 					display: inline-block;
+					vertical-align: middle;
 					padding: 0.35em 0.35em 0.35em 0.35em;
 				}
 
