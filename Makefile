@@ -24,3 +24,6 @@ syncdb:
 
 pip_install:
 	pip install --no-index -f wheels/ -r requirements.txt
+
+ansible:
+	ansible-playbook -i "localhost," -c local "ansible/playbook.vm.yml"
