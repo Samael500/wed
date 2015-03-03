@@ -10,7 +10,7 @@ import http
 
 class NewsModelsTestCase(TestCase):
 
-    """ Test guest model's """
+    """ Test news model's """
 
     model = News
 
