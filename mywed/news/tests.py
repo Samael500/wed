@@ -115,6 +115,7 @@ class NewsViewsTestCase(TestCase):
     def test_news_paginate(self):
         """ Test correct paginate """
         # change pagination settings
+        self.assertEquals(settings.PAGINATE_BY, 10)
         from news.views import NewsListView
         NewsListView.paginate_by = 1
         # login user
