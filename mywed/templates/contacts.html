@@ -1,6 +1,6 @@
 {% extends 'base_site.html' %}
 
-{% block title %}Главная {{ block.super }}{% endblock %}
+{% block title %}Контакты {{ block.super }}{% endblock %}
 
 {% block nav %}
     {% with 'index' as location %}
@@ -11,15 +11,13 @@
 {% block content %}
         <!-- Main -->
 
-{% include 'carousel.html' %}
-
             <div id="main" class="wrapper style1">
                 <div class="container">
                     <article class="special">
                         <header>
-                            <h2>{{ index_page.title }}</h2>
+                            <h2>{{ contacts_page.title }}</h2>
                         </header>
-                        {{ index_page.content|safe }}
+                        {{ contacts_page.content|safe }}
                     </article>
                 </div>
             </div>
