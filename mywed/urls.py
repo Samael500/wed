@@ -11,6 +11,7 @@ urlpatterns = patterns(
 
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^summernote/', include('django_summernote.urls')),
 
     url(r'^login$', LoginFormView.as_view(), name='login'),
     url(r'^$', login_required(IndexView.as_view()), name='index'),

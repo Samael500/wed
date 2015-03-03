@@ -55,8 +55,10 @@ target/
 
 #### CUSTOM ###
 venv/
+media/
 mywed/media/
 mywed/static/grappelli/
+mywed/static/django_summernote/
 mywed/static/admin/
 mywed/static/CACHE/
 .vagrant

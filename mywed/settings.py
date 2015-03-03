@@ -29,7 +29,7 @@ SECRET_KEY = '5#1yw)g=zo9qfft-ynl*if19_s%^7zr_9o!@=bw1a)80umkzft'
 DEBUG = False
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['olya-maks.ru', ]
 
 LOGIN_URL = 'login'
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     # custom apps
     'compressor',
     'pure_pagination',
+    'django_summernote',
     # mywed apps
     'guests',
     'index',
@@ -117,11 +118,36 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
-
+# paginations
 PAGINATE_BY = 10
 PAGINATION_SETTINGS = {
     'PAGE_RANGE_DISPLAYED': 1,
     'MARGIN_PAGES_DISPLAYED': 3,
+}
+
+# summernote
+SUMMERNOTE_CONFIG = {
+    'styleWithTags': True,
+    # Change editor size
+    'width': '100%',
+    'height': '480',
+    # Use proper language setting automatically (default)
+    'lang': 'ru-RU',
+    # Customize toolbar buttons
+    'toolbar': [
+        ['style', ['style']],
+        ['font', ['bold', 'italic', 'underline', 'clear']],
+            #'superscript', 'subscript', 'strikethrough',
+        # ['fontname', ['fontname']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video', 'hr']],
+        ['view', ['fullscreen', 'codeview']],
+        ['help', ['help']],
+    ],
 }
 
 try:
