@@ -1,0 +1,19 @@
+# Install requirements
+- name: Create virtualenv
+  shell: cd {{ root_dir }} && pyvenv-3.4 venv
+  sudo: no
+- name: Install required python packages with pip from wheels archive
+  shell: cd {{ root_dir }} && venv/bin/pip install --no-index -f wheels/ -r requirements.txt
+  sudo: no
+- name: Compress static files
+  django_manage: command=compress app_path={{ root_dir }} virtualenv={{ root_dir }}/venv
+- name: Collectstatic
+  django_manage: command=collectstatic app_path={{ root_dir }} virtualenv={{ root_dir }}/venv
+- name: Sync database
+  django_manage: command=syncdb app_path={{ root_dir }} virtualenv={{ root_dir }}/venv
+- name: Create user
+  shell: cd {{ root_dir }} && echo "from django.contrib.auth.models import User; User.objects.create_superuser({{ user_data }})" | venv/bin/python manage.py shell
+  sudo: no
+- name: Start runserver
+  shell: cd {{ root_dir }} && venv/bin/gunicorn --preload -D -b 0.0.0.0:8000 mywed.wsgi:application
+  sudo: no

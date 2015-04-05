@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{%block title %}Добро пожаловать {{ block.super }}{% endblock%}
+
+{% block extend_scripts%}
+<script type="text/javascript">
+$(document).ready(function() {
+    $('div[data-args="navPanel"]').remove();
+});
+</script>
+{% endblock %}
+
+{% block base_content %}
+<body class="homepage">
+    <div id="header" class="full_page">
+            <div class="inner">
+                <header>
+                    <h1>Добро пожаловать</h1>
+                    <hr />
+                    <p>Вход только по приглашениям</p>
+                </header>
+                <footer>
+                    <section class="special">
+                        <form action="{% url 'login' %}" method="POST">
+                            {% csrf_token %}
+                            <ul class="inline">
+                                <li>{{ form.user_key }}
+                                <li><input type="submit" value="Войти" class="alt" />
+                            </ul>
+                            {% include 'helpers/field_error.html' with field=form.user_key %}
+                        </form>
+                    </section>
+                </footer>
+            </div>
+    </div>
+</body>
+{% endblock %}

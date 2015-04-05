@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block base_content %}
+<body>
+    <div id="header">
+        <!-- Inner -->
+        <div class="inner">
+            <header><h1>Наша свадьба</h1></header>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                {% block nav %}
+                    <li{% ifequal location 'index' %} class="active"{% endifequal %}><a href="{% url 'index' %}">Главная</a></li>
+                    <li{% ifequal location 'news' %} class="active"{% endifequal %}><a href="{% url 'news' %}">Новости</a></li>
+                    {# <li{% ifequal location '' %} class="active"{% endifequal %}><a href="">***</a></li> #}
+                    <li{% ifequal location 'gallery' %} class="active"{% endifequal %}><a href="">Галерея</a></li>
+                    <li{% ifequal location 'contacts' %} class="active"{% endifequal %}><a href="{% url 'contacts' %}">Контакты</a></li>
+                {% endblock %}
+            </ul>
+        </nav>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+{% comment %}
+    <div id="footer">
+        <div class="container">
+        </div>
+    </div>
+{% endcomment %}
+</body>
+{% endblock %}

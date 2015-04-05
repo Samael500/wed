@@ -1,0 +1,12 @@
+Django==1.7
+django-grappelli==2.6.3
+gunicorn==19.2.1
+pep8==1.5.7
+psycopg2==2.5.4
+pylama==6.0.1
+django-rainbowtests==0.2.1
+coverage==3.7.1
+coveralls==0.5
+django-summernote==0.6.3
+-e git+https://github.com/django-compressor/django-compressor.git@master#egg=django_compressor
+-e git+https://github.com/Samael500/django-pure-pagination.git@master#egg=django_pure_pagination
