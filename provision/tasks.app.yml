@@ -1,0 +1,37 @@
+---
+
+# Install requirements
+- name: Create virtualenv
+  shell: >
+    cd {{ root_dir }} && pyvenv-3.4 {{ venv_path }}
+  sudo: no
+- name: Install required python packages with pip from wheels archive
+  shell: >
+    cd {{ root_dir }} && {{ venv_path }}/bin/pip install --no-index -f wheels/ -r requirements.txt
+  sudo: no
+- name: Copy settings local
+  shell: cp settings_local.py.example settings_local.py
+  sudo: no
+  args:
+    chdir: '{{ root_dir }}/{{ project_name }}'
+    creates: '{{ root_dir }}/{{ project_name }}/settings_local.py'
+- name: Run django commands
+  django_manage: >
+    command="{{ item }}" app_path={{ root_dir }} virtualenv={{ root_dir }}/{{ venv_path }}
+  with_items:
+    - collectstatic
+    - syncdb
+    # - compress --force
+- name: Create user
+  shell: >
+    echo "from django.contrib.auth.models import User;
+    User.objects.create_superuser({{ user_data }})" | {{ venv_path }}/bin/python manage.py shell
+  args:
+    chdir: "{{ root_dir }}"
+  sudo: no
+- name: Start runserver
+  shell: >
+    {{ venv_path }}/bin/gunicorn --preload -D -b 127.0.0.1:8000 {{ project_name }}.wsgi:application
+  args:
+    chdir: "{{ root_dir }}"
+  sudo: no

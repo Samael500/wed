@@ -1,0 +1,39 @@
+---
+
+# Install prerequisites for python 3.4 building
+- name: Install Common python packages
+  apt: name={{ item }} state=latest
+  with_items:
+    - python-dev
+    - python-pip
+    - python-virtualenv
+    - build-essential
+    - libncurses5-dev
+    - libncursesw5-dev
+    - libreadline6-dev
+    - libdb5.3-dev
+    - libgdbm-dev
+    - libsqlite3-dev
+    - libssl-dev
+    - libbz2-dev
+    - libexpat1-dev
+    - liblzma-dev
+    - zlib1g-dev
+    - libxml2-dev
+    - libxslt1-dev
+# Build python 3.4
+- name: Download Python 3.4 sources
+  get_url: url=https://www.python.org/ftp/python/3.4.2/Python-3.4.2.tgz dest=/tmp
+- name: Uncompress sources archive
+  unarchive: src=/tmp/Python-3.4.2.tgz dest=/tmp copy=no
+- name: Configuring Python 3.4 Makefile
+  shell: cd /tmp/Python-3.4.2 && ./configure --prefix=/usr/local/python-3.4.2
+- name: Compiling the Python 3.4 source code
+  shell: cd /tmp/Python-3.4.2 && make
+- name: Install compiled Python 3.4 binaries
+  shell: cd /tmp/Python-3.4.2 && make install
+- name: Clean /tmp directory from temporary Python 3.4 files
+  shell: rm -rf /tmp/Pytohn-3.4.2*
+- name: Create links to Python 3.4 binaries
+  shell: ln -s /usr/local/python-3.4.2/bin/* /usr/local/bin/
+  ignore_errors: yes

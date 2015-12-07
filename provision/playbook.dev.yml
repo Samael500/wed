@@ -1,23 +1,27 @@
 ---
 
 - hosts: all
-  connection: local
   sudo: yes
-  remote_user: maks
+  remote_user: vagrant
+  vars:
+    # for all tasks
+    root_dir: /home/vagrant/wed
+    project_name: mywed
+    venv_path: ../venv
+    locale: ru_RU
+    encoding: UTF-8
   tasks:
     - include: tasks.common.yml
     - include: tasks.postgresql.yml
       vars:
-        postgres_password: # !WARNING! 80umkzft
+        postgres_password: 80umkzft
     - include: tasks.nginx.yml
       vars:
-        http_host: # !WARNING! 10.1.1.111
+        http_host: 10.1.1.111
         http_port: 80
-        root_dir: /home/maksim/wed
     - include: tasks.app.yml
       vars:
-        root_dir: /home/maksim/wed
-        user_data: # !WARNING! "'root', 'admin@mywed.ru', '123123'"
+        user_data: "'root', 'admin@example.com', '123123'"
   handlers:
     - name: restart nginx
       service: name=nginx state=restarted
