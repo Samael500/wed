@@ -3,6 +3,13 @@
 - hosts: all
   sudo: yes
   remote_user: vagrant
+  vars:
+    # for all tasks
+    root_dir: /home/vagrant/proj
+    project_name: mywed
+    venv_path: ../venv
+    locale: ru_RU
+    encoding: UTF-8
   tasks:
     - include: tasks.common.yml
     - include: tasks.postgresql.yml
@@ -12,11 +19,9 @@
       vars:
         http_host: 10.1.1.111
         http_port: 80
-        root_dir: /home/vagrant/proj
     - include: tasks.app.yml
       vars:
-        root_dir: /home/vagrant/proj
-        user_data: "'root', 'admin@mywed.ru', '123123'"
+        user_data: "'root', 'admin@example.com', '123123'"
   handlers:
     - name: restart nginx
       service: name=nginx state=restarted

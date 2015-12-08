@@ -1,0 +1,32 @@
+---
+
+# Change locale
+- name: Change locale
+  template: src=templates/locale.gen.j2 dest=/etc/locale.gen
+- name: Set LC_ALL in /etc/environment
+  template: src=templates/environment.j2 dest=/etc/environment
+- name: Run locale-gen
+  shell: locale-gen
+# Debian sources
+- name: Clear sources.list
+  template: src=templates/sources.list.j2 dest=/etc/apt/sources.list
+- name: Update repo
+  apt: update_cache=yes
+# Install common required packages
+- name: Install common packages
+  apt: >
+    name={{ item }} state=latest
+  with_items:
+    - curl
+    - git-core
+    - libjpeg-dev
+    - libevent-dev
+    - libxslt-dev
+    - libmysqlclient-dev
+# Install python
+- name: Check is python installed
+  stat: path=/usr/local/bin/python3.4 get_md5=False
+  register: python_binary
+  ignore_errors: True
+- include: tasks.python.yml
+  when: not python_binary.stat.exists
