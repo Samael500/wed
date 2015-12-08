@@ -5,7 +5,7 @@
   remote_user: vagrant
   vars:
     # for all tasks
-    root_dir: /home/vagrant/wed
+    root_dir: /home/vagrant/proj
     project_name: mywed
     venv_path: ../venv
     locale: ru_RU

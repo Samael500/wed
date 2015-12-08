@@ -21,7 +21,7 @@
   with_items:
     - collectstatic
     - syncdb
-    # - compress --force
+    - compress --force
 - name: Create user
   shell: >
     echo "from django.contrib.auth.models import User;
