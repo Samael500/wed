@@ -8,12 +8,14 @@ class LoginForm(forms.Form):
 
     """ Form for login guests """
 
-    user_key = forms.CharField(required=True, label=Guest._meta.get_field_by_name('user_key')[0].verbose_name)
+    user_key = forms.CharField(
+        required=True, max_length=8, label=Guest._meta.get_field_by_name('user_key')[0].verbose_name)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._set_errors_css()
         self.fields['user_key'].widget.attrs['placeholder'] = self.fields['user_key'].label
+        self.fields['user_key'].widget.attrs['max_length'] = 8
 
     def _set_errors_css(self):
         for field in self:
