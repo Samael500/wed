@@ -47,6 +47,9 @@
 </style>
 
 
+{% if page_obj.has_previous or page_obj.has_next %}
+<article class="wrapper style3">
+
 <div class="pagination">
     {% if page_obj.has_previous %}
         <a href="?{{ page_obj.previous_page_number.querystring }}" class="page"><i class="fa fa-angle-double-left"></i></a>
@@ -70,3 +73,6 @@
         <span class="current page"><i class="fa fa-angle-double-right"></i></span>
     {% endif %}
 </div>
+
+</article>
+{% endif %}

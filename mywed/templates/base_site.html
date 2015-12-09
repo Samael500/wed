@@ -4,7 +4,7 @@
     <div id="header">
         <!-- Inner -->
         <div class="inner">
-            <header><h1>Оля &amp; Макс</h1></header>
+            <header><h1>Оля &amp; Максим</h1></header>
         </div>
 
         <!-- Nav -->
@@ -14,7 +14,7 @@
                     <li{% ifequal location 'index' %} class="active"{% endifequal %}><a href="{% url 'index' %}">Главная</a></li>
                     <li{% ifequal location 'news' %} class="active"{% endifequal %}><a href="{% url 'news' %}">Новости</a></li>
                     {# <li{% ifequal location '' %} class="active"{% endifequal %}><a href="">***</a></li> #}
-                    <li{% ifequal location 'gallery' %} class="active"{% endifequal %}><a href="">Галерея</a></li>
+                    {# <li{% ifequal location 'gallery' %} class="active"{% endifequal %}><a href="">Галерея</a></li> #}
                     <li{% ifequal location 'contacts' %} class="active"{% endifequal %}><a href="{% url 'contacts' %}">Контакты</a></li>
                 {% endblock %}
             </ul>

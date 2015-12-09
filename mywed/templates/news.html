@@ -17,15 +17,14 @@
     <article class="wrapper style3">
         <time datetime="{{ news.pub_date|date:'Y-m-d' }}" class="timestamp">{{ news.pub_date|date:'d E Y' }}</time>
         <h2><a href="{% url 'news_detail' news.pk %}">{{ news.title }}</a></h2>
-        <p>{{ news.text|truncatechars:200 }}</p>
-        <a href="{% url 'news_detail' news.pk %}">Читать новость <i class="fa fa-angle-right"></i></a>
+        {# <p>{{ news.text|truncatechars:200 }}</p> #}
+        <p>{{ news.text }}</p>
+        {# <a href="{% url 'news_detail' news.pk %}">Читать новость <i class="fa fa-angle-right"></i></a> #}
     </article>
 
 {% endfor %}
 
-    <article class="wrapper style3">
-        {% include 'helpers/_pagination.html' %}
-    </article>
+    {% include 'helpers/_pagination.html' %}
 
 </div>
 
