@@ -25,3 +25,19 @@ class WebPage(models.Model):
     class Meta:
         verbose_name = 'Страница'
         verbose_name_plural = 'Страницы'
+
+
+class Carousel(models.Model):
+
+    """ Carousel photos model """
+
+    title = models.CharField(verbose_name='Заголовок', max_length=100, blank=True, null=True)
+    description = models.CharField(verbose_name='Описание', max_length=500, blank=True, null=True)
+    photo = models.ImageField(verbose_name='Фотография')
+
+    def __str__(self):
+        return self.title or 'no name'
+
+    class Meta:
+        verbose_name = 'Изображение в каруселе'
+        verbose_name_plural = 'Изображения в каруселе'
