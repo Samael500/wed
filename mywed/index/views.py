@@ -1,12 +1,13 @@
-from django.views.generic import TemplateView
-from index.models import WebPage
+from django.views.generic import TemplateView, ListView
+from index.models import WebPage, Carousel
 
 
-class IndexView(TemplateView):
+class IndexView(ListView):
 
     """ Index view class """
 
     template_name = 'index.html'
+    model = Carousel
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
