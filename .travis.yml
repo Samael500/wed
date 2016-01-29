@@ -9,5 +9,3 @@ env: TRAVIS=TRAVIS
 script: make ci_test
 after_script:
   - coveralls
-  
-  
