@@ -1,10 +1,13 @@
 language: python
 python:
   - 3.4
+before_install:
+  - sudo apt-get install python-tk
 install:
   - pip install --no-index -f wheels/ -r requirements.txt
-  - pip install pillow
 env: TRAVIS=TRAVIS
 script: make ci_test
 after_script:
   - coveralls
+  
+  
