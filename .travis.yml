@@ -2,8 +2,7 @@ language: python
 python:
   - 3.4
 before_install:
-  - sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev \
-    libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+  - sudo apt-get install libjpeg8 libjpeg-dev libfreetype6 libfreetype6-dev zlib1g-dev
 install:
   - pip install --no-index -f wheels/ -r requirements.txt
 env: TRAVIS=TRAVIS
