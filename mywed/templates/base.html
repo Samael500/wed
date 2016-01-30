@@ -1,41 +1,111 @@
 {% load compress %}{% spaceless %}
+{% comment %}
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
+{% endcomment %}
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>{%block title %} / MyWED{% endblock%}</title>
+<head>
+    <title>{%block title %} / MyWED{% endblock%}</title>
+{# meta head #}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+    <meta name="keywords" content="" />
+{# / meta head #}
 
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
+    {# <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> #}
 
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400italic,300,300italic,400,600,600italic&subset=latin,cyrillic" />
+{# styles and scripts #}
+    {% compress css %}
+        <link href="{{ STATIC_URL }}css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <link href="{{ STATIC_URL }}css/style.css" rel='stylesheet' type='text/css' />	
+    {% endcompress %}
 
-        {% compress js %}
-            <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
-            <script src="{{ STATIC_URL }}js/jquery.dropotron.min.js"></script>
-            <script src="{{ STATIC_URL }}js/jquery.scrolly.min.js"></script>
-            <script src="{{ STATIC_URL }}js/jquery.onvisible.min.js"></script>
-            <script src="{{ STATIC_URL }}js/skel.min.js"></script>
-            <script src="{{ STATIC_URL }}js/skel-layers.min.js"></script>
-            <script src="{{ STATIC_URL }}js/init.js"></script>
-        {% endcompress %}
+    {% compress js %}
+        <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
+    {% endcompress %}
 
-        {% block extend_scripts %}{% endblock %}
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic|Niconne' rel='stylesheet' type='text/css'>
 
-        <noscript>
-            {% compress css %}
-                <link rel="stylesheet" href="{{ STATIC_URL }}css/skel.css" />
-                <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
-                <link rel="stylesheet" href="{{ STATIC_URL }}css/style-mobile.css" />
-                <link rel="stylesheet" href="{{ STATIC_URL }}css/style-narrow.css" />
-                <link rel="stylesheet" href="{{ STATIC_URL }}css/style-narrower.css" />
-                <link rel="stylesheet" href="{{ STATIC_URL }}css/style-normal.css" />
-                <link rel="stylesheet" href="{{ STATIC_URL }}css/style-wide.css" />
-                <link rel="stylesheet" href="{{ STATIC_URL }}css/style-noscript.css" />
-            {% endcompress %}
-        </noscript>
+{# / styles and scripts #}
 
-    </head>
-    {% block base_content %}{% endblock %}
+</head>
+<body>
+{% comment %}
+<!-- header -->	
+	<div class="header" id="home">
+		<div class="container">
+			<div class="header-left">
+				<a href="signup.html"class="sign">SIGN UP</a>
+			</div>
+			<div class="header-right">
+			  <h6>Follows Us :</h6>
+				<ul class="f-icons">
+					<li><a href="#" class="facebook"> </a></li>
+					<li><a href="#" class="p"> </a></li>
+					<li><a href="#" class="twitter"> </a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>	
+{% endcomment %}
+{% block base_content %}
+{% endblock base_content %}
+
+<div class="bottom-section">
+    <div class="container">
+        <h3>Thanks for Visiting our Wedding</h3>
+    </div>
+</div>
+
+{% block footer %}
+    <div class="footer">
+          <div class="container">
+             <div class="copy">
+                      <p>&copy; 2016 All Rights Reserved. Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
+              </div>
+              <div class="header-right b-lost">
+               <h6>Follows Us :</h6>
+                <ul class="f-icons two">
+                    <li><a href="#" class="facebook"> </a></li>
+                    <li><a href="#" class="p"> </a></li>
+                    <li><a href="#" class="twitter"> </a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+         </div>
+     </div>
+{% endblock footer %}
+    <!--start-smoth-scrolling-->
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){     
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+    <!--start-smoth-scrolling-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+</body>
 </html>
 {% endspaceless %}
