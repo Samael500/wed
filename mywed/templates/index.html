@@ -2,86 +2,68 @@
 
 {% block title %}Главная {{ block.super }}{% endblock %}
 
-
 {% block base_content %}
+
 <div class="banner">
 
-	<div class="container">
-		<div class="banner-navigation">
-			<div class="logo">
-				<a href="index.html"><h1>Wed<span> Day</span></h1></a>
-			</div>
-		<span class="menu"></span>
-				<div class="top-menu">
-								<ul class="nav">
-									<li class="hvr-sweep-to-bottom cap"><a href="index.html">Home</a></li>
-									<li class="hvr-sweep-to-bottom"><a href="about.html">About</a></li>
-									<li class="hvr-sweep-to-bottom"><a href="typography.html">Services</a></li>
-									<li class="hvr-sweep-to-bottom"><a href="moments.html">Big Moments</a></li>
-									<li class="hvr-sweep-to-bottom"><a href="contact.html">Contact Us</a></li>
-								</ul>
-								<div class="clearfix"></div>
-						</div>
-					<!--script-for-menu-->
-								<script>
-									$("span.menu").click(function(){
-										$(".top-menu ul").slideToggle("slow" , function(){
-										});
-									});
-								</script>
-					<!--script-for-menu-->
+{% with 'index' as location %}
+	{% include '_menu.html' %}
+{% endwith %}
 
-				<div class="clearfix"></div>
+<div  id="top" class="callbacks_container">
+	<ul class="rslides" id="slider4">
+		<li>
+			<div class="banner-info">
+				<h3>Максим <lable>&amp;</lable> Оля</h3>
+					<p>суббота 9 июля, 2016</p>
 			</div>
-				<div  id="top" class="callbacks_container">
-					<ul class="rslides" id="slider4">
-							<li>
-								<div class="banner-info">
-									<h3>Michael <lable>&</lable> Annie</h3>
-									<p>Aug 30TH, 2015</p>
-								</div>
-							</li>
-							<li>
-								<div class="banner-info">
-								
-									<h3>David <lable>&</lable> Mary</h3>
-									<p>Nov 10TH, 2015</p>
-								</div>
-							</li>
-							<li>
-								<div class="banner-info">
-									<h3>Adams <lable>&</lable> Eve</h3>
-									<p>Mar 30TH, 2016</p>
-								</div>								
-							</li>
-						 </ul>
-					</div>
-					<!--- banner Slider starts Here --->
-	  			<script src="js/responsiveslides.min.js"></script>
-			 <script>
-			    // You can also use "$(window).load(function() {"
-			    $(function () {
-			      // Slideshow 4
-			      $("#slider4").responsiveSlides({
-			        auto: true,
-			        pager: true,
-			        nav: true,
-			        speed: 500,
-			        namespace: "callbacks",
-			        before: function () {
-			          $('.events').append("<li>before event fired.</li>");
-			        },
-			        after: function () {
-			          $('.events').append("<li>after event fired.</li>");
-			        }
-			      });
-			
-			    });
-			  </script>
-			<!----//End-slider-script---->
+		</li>
+	
+{% comment %}
+	<li>
+		<div class="banner-info">
+		
+			<h3>David <lable>&</lable> Mary</h3>
+			<p>Nov 10TH, 2015</p>
 		</div>
+	</li>
+	<li>
+		<div class="banner-info">
+			<h3>Adams <lable>&</lable> Eve</h3>
+			<p>Mar 30TH, 2016</p>
+		</div>								
+	</li>
+{% endcomment %}
+	 </ul>
+</div>
+
+<script src="{{ STATIC_URL }}js/responsiveslides.min.js"></script>
+ <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 4
+      $("#slider4").responsiveSlides({
+        auto: true,
+        pager: true,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+    });
+  </script>
+
 	</div>
+</div>
 <!--//banner-->
+
+
 	<!--/welcome-->
 	<div class="welcome-section">
 		<div class="container">
@@ -125,17 +107,17 @@
 		       <h3>Our Love Stories</h3>
 			<div class="story-grids">
 				<div class="col-md-4 story-grid">
-					 <img src="images/story1.jpg" class="img-responsive" alt="" />
+					 <img src="{{ STATIC_URL }}images/story1.jpg" class="img-responsive" alt="" />
 					 <h4>WE' VE MET</h4>
 					<p>Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Lorem ipsum dolor sit amet,…</p>
 				</div>
 				<div class="col-md-4 story-grid">
-					 <img src="images/story2.jpg" class="img-responsive" alt="" />
+					 <img src="{{ STATIC_URL }}images/story2.jpg" class="img-responsive" alt="" />
 					 <h4>FIRST DATE</h4>
 					<p>Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Lorem ipsum dolor sit amet,…</p>
 				</div>
 				<div class="col-md-4 story-grid">
-					 <img src="images/story3.jpg" class="img-responsive" alt="" />
+					 <img src="{{ STATIC_URL }}images/story3.jpg" class="img-responsive" alt="" />
 					 <h4>ENGAGEMENT</h4>
 					<p>Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Lorem ipsum dolor sit amet,…</p>
 				</div>
@@ -149,19 +131,19 @@
 		    <h3>Our Events Schedule</h3>
 			<div class="event-grids">
 				<div class="col-md-4 event-grid">
-					 <img src="images/e1.jpg" class="img-responsive" alt="" />
+					 <img src="{{ STATIC_URL }}images/e1.jpg" class="img-responsive" alt="" />
 					 <h4>ENGAGEMENT</h4>
 					<p>Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Lorem ipsum dolor sit amet,…</p>
 					<span class="event-date">Aug 30th <span class="event-year">2015</span></span>
 				</div>
 				<div class="col-md-4 event-grid">
-					 <img src="images/e2.jpg" class="img-responsive" alt="" />
+					 <img src="{{ STATIC_URL }}images/e2.jpg" class="img-responsive" alt="" />
 					 <h4>WEDDING CEREMONY</h4>
 					<p>Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Lorem ipsum dolor sit amet,…</p>
 					<span class="event-date">Sep 14th <span class="event-year">2015</span></span>
 				</div>
 				<div class="col-md-4 event-grid lost">
-					 <img src="images/e3.jpg" class="img-responsive" alt="" />
+					 <img src="{{ STATIC_URL }}images/e3.jpg" class="img-responsive" alt="" />
 					 <h4>WEDDING RECEPTION</h4>
 					<p>Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Lorem ipsum dolor sit amet,…</p>
 					<span class="event-date">Dec 14th <span class="event-year">2015</span></span>
@@ -171,4 +153,4 @@
 		</div>
 	</div>
 <!--/bottom-section-->
-{% endblock base_content %}
+{% endblock %}
