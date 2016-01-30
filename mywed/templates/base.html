@@ -28,7 +28,7 @@
         <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
     {% endcompress %}
 
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic|Niconne' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>
 
 {# / styles and scripts #}
 
@@ -57,11 +57,13 @@
 {% block base_content %}
 {% endblock base_content %}
 
+{% comment %}
 <div class="bottom-section">
     <div class="container">
         <h3>Thanks for Visiting our Wedding</h3>
     </div>
 </div>
+{% endcomment %}
 
 {% block footer %}
 <div class="footer">
