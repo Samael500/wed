@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Новости {{ block.super }}{% endblock %}
+
+{% block base_content %}
+
+<div class="banner two">
+
+{% with 'news' as location %}
+    {% include '_menu.html' %}
+{% endwith %}
+
+<!--/contact-section-->
+</div>
+
+<div class="event-section">
+        <div class="container">
+            <h3>Наши новости</h3>
+
+        {% for news in object_list %}
+
+            {% if forloop.first %}
+                <div class="event-grids">
+            {% endif %}
+    
+                    <div class="col-md-4 event-grid{% if forloop.counter|divisibleby:3 or forloop.last %} lost{% endif %}">
+                        <img src="/static/images/e3.jpg" class="img-responsive" alt="">
+                        <h4>{{ news.title }}</h4>
+                        <p>{{ news.text|safe }}</p>
+                        <span class="event-date" style="z-index:999;">{{ news.pub_date|date:'d M' }}<span class="event-year">{{ news.pub_date|date:'Y' }}</span></span>
+                    </div>
+
+            {% if forloop.counter|divisibleby:3 %}
+                    <div class="clearfix"></div>
+                </div>
+                <div class="event-grids">
+            {% endif %}
+
+            {% if forloop.last %}
+                    <div class="clearfix"></div>
+                </div>
+            {% endif %}
+
+        {% endfor %}
+
+        </div>
+    </div>
+
+    {# {% include 'helpers/_pagination.html' %} #}
+
+    </div>  
+</div>  
+
+{% endblock %}

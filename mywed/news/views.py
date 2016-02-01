@@ -10,7 +10,7 @@ class NewsListView(CustomPaginationMixin, ListView):
 
     model = News
     template_name = 'news.html'
-    paginate_by = settings.PAGINATE_BY
+    # paginate_by = settings.PAGINATE_BY
 
 
 class NewsDetailView(DetailView):
