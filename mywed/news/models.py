@@ -9,6 +9,7 @@ class News(models.Model):
     title = models.CharField(verbose_name='Заголовок', max_length=200)
     text = models.TextField(verbose_name='Содержание новости', max_length=1000)
     pub_date = models.DateField(verbose_name='Дата публикации', default=datetime.now)
+    photo = models.ImageField(verbose_name='Фотография', blank=True, null=True)
 
     created_at = models.DateTimeField(verbose_name='Время создания', auto_now_add=True)
     modified_at = models.DateTimeField(verbose_name='Время последнего изменения', auto_now=True)

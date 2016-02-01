@@ -24,7 +24,7 @@
             {% endif %}
     
                     <div class="col-md-4 event-grid{% if forloop.counter|divisibleby:3 or forloop.last %} lost{% endif %}">
-                        <img src="/static/images/e3.jpg" class="img-responsive" alt="">
+                        {% if news.photo %}<img src="{{ news.photo.url }}" class="img-responsive" alt="{{ news.title }}">{% endif %}
                         <h4>{{ news.title }}</h4>
                         <p>{{ news.text|safe }}</p>
                         <span class="event-date" style="z-index:999;">{{ news.pub_date|date:'d M' }}<span class="event-year">{{ news.pub_date|date:'Y' }}</span></span>
