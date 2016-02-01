@@ -135,16 +135,16 @@ SUMMERNOTE_CONFIG = {
     'lang': 'ru-RU',
     # Customize toolbar buttons
     'toolbar': [
-        ['style', ['style']],
-        ['font', ['bold', 'italic', 'underline', 'clear']],
-        ['fontsize', ['fontsize']],
-        ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['height', ['height']],
-        ['table', ['table']],
-        ['insert', ['link', 'picture', 'video', 'hr']],
+        # ['style', ['style']],
+        # ['font', ['bold', 'italic', 'underline', 'clear']],
+        # ['fontsize', ['fontsize']],
+        # ['color', ['color']],
+        # ['para', ['ul', 'ol', 'paragraph']],
+        # ['height', ['height']],
+        # ['table', ['table']],
+        # ['insert', ['link', 'picture', 'video', 'hr']],
         ['view', ['fullscreen', 'codeview']],
-        ['help', ['help']],
+        # ['help', ['help']],
     ],
 }
 

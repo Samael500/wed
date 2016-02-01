@@ -1,4 +1,4 @@
-{% extends 'base.html' %}{% load compress %}
+{% extends 'base.html' %}
 
 {% block title %}Главная {{ block.super }}{% endblock %}
 
@@ -22,7 +22,6 @@
     </ul>
 </div>
 
-{% compress js %}
 <script src="{{ STATIC_URL }}js/responsiveslides.min.js"></script>
 {# / banner slider #}
 
@@ -46,7 +45,6 @@
 
     });
 </script>
-{% endcompress %}
 
 </div>
 
