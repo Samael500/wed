@@ -1437,7 +1437,7 @@ ul.contact-grids li{
   width: 22%;
   margin-right: 1%;
 }
-li.contact-grid{
+/*li.contact-grid{
 	cursor: pointer;
 	transition: 0.5s ease;
 	-webkit-transition: 0.5s  ease;
@@ -1445,8 +1445,8 @@ li.contact-grid{
 	-moz-transition: 0.5s ease;
 	-ms-transition:0.5s  ease;
 }
-li.contact-grid:hover {
-	opacity: 0.5;
+*/li.contact-grid:hover {
+	opacity: 0.9;
 }
 ul.contact-grids h4{
  color: #1b8fff;
