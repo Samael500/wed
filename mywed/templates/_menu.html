@@ -1,7 +1,7 @@
 <div class="container">
     <div class="banner-navigation">
         <div class="logo">
-            <a href="{% url 'index' %}"><h1>Wed<span> Day</span></h1></a>
+            <a href="{% url 'index' %}"><h1>Наш <span>День</span></h1></a>
         </div>
 
     <span class="menu"></span>
@@ -10,9 +10,7 @@
 
         <ul class="nav">
             <li class="hvr-sweep-to-bottom{% ifequal location 'index' %} cap{% endifequal %}"><a href="{% url 'index' %}">Главная</a></li>
-            {# <li class="hvr-sweep-to-bottom cap"><a href="about.html">About</a></li> #}
-            {# <li class="hvr-sweep-to-bottom"><a href="typography.html">Services</a></li> #}
-            {# <li class="hvr-sweep-to-bottom"><a href="moments.html">Big Moments</a></li> #}
+            <li class="hvr-sweep-to-bottom{% ifequal location 'news' %} cap{% endifequal %}"><a href="{% url 'news' %}">Новости</a></li>
             <li class="hvr-sweep-to-bottom{% ifequal location 'contacts' %} cap{% endifequal %}"><a href="{% url 'contacts' %}">Контакты</a></li>
         </ul>
 
