@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load compress %}
 
 {% block title %}Главная {{ block.super }}{% endblock %}
 
@@ -21,9 +21,10 @@
         </li>
     </ul>
 </div>
+
+{% compress js %}
 <script src="{{ STATIC_URL }}js/responsiveslides.min.js"></script>
 {# / banner slider #}
-
 
 <script>
     // You can also use "$(window).load(function() {"
@@ -45,6 +46,7 @@
 
     });
 </script>
+{% endcompress %}
 
 </div>
 
@@ -57,7 +59,7 @@
         <div class="welcome-grids">
             <ul class="ch-grid">
                 <li>
-                    <div class="col-md-6 ch-item ch-img-1">             
+                    <div class="col-md-6 ch-item ch-img-1">
                         <div class="ch-info-wrap">
                             <div class="ch-info">
                                 <div class="ch-info-front ch-img-1"></div>
