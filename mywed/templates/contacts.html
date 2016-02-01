@@ -15,60 +15,8 @@
 
 <div class="contact">
     <div class="container">
-        <h3>Связаться с нами</h3>
 
-        <div class="contact-content">
-            <ul class="contact-grids">
-
-                <li class="contact-grid">
-                    <a href="mailto:we@olya-maks.ru">
-                        <i class="icon12"> </i>
-                        <h4>Почта</h4>
-                        <h5>we@olya-maks.ru</h5>
-                    </a>
-                </li>
-
-                <li class="contact-grid phone">
-                    <a href="tel:79788047882">
-                        <i class="icon11"> </i>
-                        <h4>Максим</h4>
-                        <h5>+7 (978) 804 78 82</h5>
-                    </a>
-                </li>
-
-
-                <li class="contact-grid phone">
-                    <a href="tel:79175021930">
-                        <i class="icon11"> </i>
-                        <h4>Максим</h4>
-                        <h5>+7 (917) 502 19 30</h5>
-                    </a>
-                </li>
-
-                <li class="contact-grid phone">
-                    <a href="tel:79161994849">
-                        <i class="icon11"> </i>
-                        <h4>Оля</h4>
-                        <h5>+7 (916) 199 84 49</h5>
-                    </a>
-                </li>
-
-
-{% comment %}
-    <li class="contact-grid">
-        <i class="icon13"> </i>
-        <h4>Twitter</h4>
-        <h5>@Twitter</h5>
-    </li>
-    <li class="contact-grid fb">
-        <i class="icon14"> </i>
-        <h4>Facebook</h4>
-        <h5>My.Example</h5>
-    </li>
-{% endcomment %}
-
-                <div class="clearfix"> </div>
-            </ul>
+    {{ contacts_page.content|safe }}
 
 {% comment %}
                 <form>

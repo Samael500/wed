@@ -11,7 +11,7 @@ class WebPageAdminForm(forms.ModelForm):
 
     class Meta:
         model = WebPage
-        widgets = {'content': SummernoteWidget(), }
+        # widgets = {'content': SummernoteWidget(), }
 
 
 class WebPageAdmin(admin.ModelAdmin):
