@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Галерея {{ block.super }}{% endblock %}
+
+{% block base_content %}
+
+<div class="banner two">
+
+{% with 'gallery' as location %}
+    {% include '_menu.html' %}
+{% endwith %}
+
+</div>
+
+<div class="gallery">
+    <div class="container">
+
+
+
+        </div>  
+    </div>  
+
+{% endblock %}
