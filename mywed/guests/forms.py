@@ -44,3 +44,13 @@ class LoginForm(forms.Form):
 
         if not self.user.is_active:
             raise ValidationError('Аккаунт отключен.')
+
+
+class UserAdminForm(forms.ModelForm):
+
+    """ Set required email false """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if 'email' in self.fields:
+            self.fields['email'].required = False

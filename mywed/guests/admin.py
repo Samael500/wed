@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin as SuperUserAdmin
 from guests.models import Guest
+from guests.forms import UserAdminForm
 
 
 class GuestAdmin(admin.ModelAdmin):
@@ -34,6 +35,7 @@ class UserAdmin(SuperUserAdmin):
 
     """ Custom user admin class """
 
+    form = UserAdminForm
     list_display = ('username', 'first_name', 'last_name', 'is_staff', 'is_guest', 'has_enter')
 
     def get_fieldsets(self, request, obj=None):
