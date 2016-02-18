@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin as SuperUserAdmin
 from guests.models import Guest
-from guests.forms import UserAdminForm
 
 
 class GuestAdmin(admin.ModelAdmin):
@@ -54,6 +53,9 @@ class UserAdmin(SuperUserAdmin):
         return obj.last_login > obj.date_joined
     has_enter.short_description = u'Заходил'
     has_enter.boolean = True
+
+    def has_add_permission(self, request):
+        return False
 
 
 admin.site.unregister(Group)
