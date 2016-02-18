@@ -34,7 +34,7 @@ class UserAdmin(SuperUserAdmin):
 
     """ Custom user admin class """
 
-    list_display = ('username', 'first_name', 'last_name', 'is_staff', 'is_guest', )
+    list_display = ('username', 'first_name', 'last_name', 'is_staff', 'is_guest', 'has_enter')
 
     def get_fieldsets(self, request, obj=None):
         fieldsets = list(self.fieldsets)
@@ -50,8 +50,8 @@ class UserAdmin(SuperUserAdmin):
 
     def has_enter(self, obj):
         return obj.last_login > obj.date_joined
-    is_guest.short_description = u'Заходил'
-    is_guest.boolean = True
+    has_enter.short_description = u'Заходил'
+    has_enter.boolean = True
 
 
 admin.site.unregister(Group)
