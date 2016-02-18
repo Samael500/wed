@@ -18,5 +18,5 @@ urlpatterns = patterns(
     url(r'^$', login_required(IndexView.as_view()), name='index'),
     url(r'^contacts$', login_required(ContactsView.as_view()), name='contacts'),
     url(r'^gallery$', login_required(ImageGallery.as_view()), name='gallery'),
-    url(r'^news/', include('news.urls')),
+    url(r'^news', include('news.urls')),
 )
