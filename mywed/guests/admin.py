@@ -38,7 +38,7 @@ class UserAdmin(SuperUserAdmin):
 
     def get_fieldsets(self, request, obj=None):
         fieldsets = list(self.fieldsets)
-        # fieldsets[2] = ('Права доступа', {'fields': ('is_active', 'is_staff', 'is_superuser')})
+        fieldsets[2] = ('Права доступа', {'fields': ('is_active', 'is_staff', 'is_superuser')})
         return fieldsets
 
     inlines = (GuestAdminInline, )

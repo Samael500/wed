@@ -15,7 +15,30 @@
 <div class="gallery">
     <div class="container">
 
+    <div id="gallery" style="display:none;">
+        {% for image in object_list %}
 
+            <img alt="{{ image.title }}" src="{{ image.photo.url }}"
+                data-image="{{ image.photo.url }}"
+                data-description="{{ image.description }}">
+
+        {% endfor %}
+    </div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery("#gallery").unitegallery({
+            gallery_theme: "tiles",
+            tiles_type: "nested",
+            tile_overlay_color: "#1b8fff",
+
+            lightbox_overlay_opacity: 0.7,
+            // lightbox_overlay_color: "#1b8fff",
+            lightbox_textpanel_enable_title: true,
+            lightbox_textpanel_enable_description: true,
+        });
+    });
+</script>
 
         </div>  
     </div>  
