@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'compressor',
     'pure_pagination',
     'django_summernote',
+    'sorl.thumbnail',
     # mywed apps
     'guests',
     'index',

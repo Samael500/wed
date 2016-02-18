@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 
 {% block title %}Галерея {{ block.super }}{% endblock %}
 
@@ -17,11 +18,13 @@
 
     <div id="gallery" style="display:none;">
         {% for image in object_list %}
+            {% thumbnail image.photo "150" crop="center" as thumb %}
 
-            <img alt="{{ image.title }}" src="{{ image.photo.url }}"
-                data-image="{{ image.photo.url }}"
-                data-description="{{ image.description }}">
+                <img alt="{{ image.title }}" src="{{ thumb.url }}"
+                    data-image="{{ image.photo.url }}"
+                    data-description="{{ image.description }}">
 
+            {% endthumbnail %}
         {% endfor %}
     </div>
 
