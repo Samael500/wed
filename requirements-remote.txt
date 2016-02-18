@@ -11,3 +11,4 @@ django-summernote==0.6.3
 -e git+https://github.com/django-compressor/django-compressor.git@master#egg=django_compressor
 -e git+https://github.com/Samael500/django-pure-pagination.git@master#egg=django_pure_pagination
 Pillow==3.0.0
+sorl-thumbnail==12.3

@@ -11,3 +11,4 @@ django-summernote==0.6.3
 django_compressor
 django_pure_pagination
 Pillow==3.0.0
+sorl-thumbnail==12.3
