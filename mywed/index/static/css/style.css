@@ -1384,7 +1384,7 @@ a.forgot {
 	margin-right: 11px;
 }
 /*--contact--*/
-.contact{
+.contact,.gallery{
  padding:4em 0;
 }
 .contact h3 {
