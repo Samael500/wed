@@ -3,7 +3,7 @@ hostname = "mywed"
 
 Vagrant.configure(2) do |config|
   # Virtual machine parameters
-  config.vm.box = "bento/debian-8.1"
+  config.vm.box = "bento/debian-8.2"
   # config.vm.box = "Samael500/#{hostname}"
   config.vm.network "private_network", ip: ip_address
   config.vm.synced_folder ".", "/home/vagrant/proj", type: "nfs", :mount_options => ['actimeo=2']
@@ -23,8 +23,8 @@ Vagrant.configure(2) do |config|
   # Virtualbox specific parameters
   config.vm.provider "virtualbox" do |v|
     v.name = "#{hostname}_vagrant"
-    v.memory = 2048
-    v.cpus = 2
+    v.memory = 1000#2048
+    v.cpus = 1#2
   end
   # Provisioning with Ansible
   config.vm.provision "ansible" do |ansible|

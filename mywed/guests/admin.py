@@ -34,7 +34,6 @@ class UserAdmin(SuperUserAdmin):
 
     """ Custom user admin class """
 
-    form = UserAdminForm
     list_display = ('username', 'first_name', 'last_name', 'is_staff', 'is_guest', 'has_enter')
 
     def get_fieldsets(self, request, obj=None):
