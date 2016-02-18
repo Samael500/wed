@@ -22,6 +22,7 @@
     - collectstatic
     - syncdb
     - compress --force
+    - createcachetable
 - name: Create user
   shell: >
     echo "from django.contrib.auth.models import User;

@@ -17,12 +17,12 @@
     <div class="container">
 
     <div id="gallery" style="display:none;">
-        {% for image in object_list %}
-            {% thumbnail image.photo "150" crop="center" as thumb %}
+        {% for item in object_list %}
+            {% thumbnail item.photo "150" as thumb %}
 
-                <img alt="{{ image.title }}" src="{{ thumb.url }}"
-                    data-image="{{ image.photo.url }}"
-                    data-description="{{ image.description }}">
+                <img alt="{{ item.title }}" src="{{ thumb.url }}"
+                    data-image="{{ item.photo.url }}"
+                    data-description="{{ item.description }}">
 
             {% endthumbnail %}
         {% endfor %}
@@ -35,7 +35,7 @@
             tiles_type: "nested",
             tile_overlay_color: "#1b8fff",
 
-            lightbox_overlay_opacity: 0.7,
+            lightbox_overlay_opacity: 0.6,
             // lightbox_overlay_color: "#1b8fff",
             lightbox_textpanel_enable_title: true,
             lightbox_textpanel_enable_description: true,
