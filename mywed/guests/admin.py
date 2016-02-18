@@ -48,6 +48,11 @@ class UserAdmin(SuperUserAdmin):
     is_guest.short_description = u'статус гостя'
     is_guest.boolean = True
 
+    def has_enter(self, obj):
+        return obj.last_login > obj.date_joined
+    is_guest.short_description = u'Заходил'
+    is_guest.boolean = True
+
 
 admin.site.unregister(Group)
 admin.site.unregister(User)
