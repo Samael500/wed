@@ -11,6 +11,7 @@ class WebPageAdminForm(forms.ModelForm):
 
     class Meta:
         model = WebPage
+        exclude = ('pk', )
         # widgets = {'content': SummernoteWidget(), }
 
 
