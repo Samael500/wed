@@ -18,7 +18,7 @@
 
     <div id="gallery" style="display:none;">
         {% for item in object_list %}
-            {% thumbnail item.photo "150" as thumb %}
+            {% thumbnail item.photo "480" as thumb %}
 
                 <img alt="{{ item.title }}" src="{{ thumb.url }}"
                     data-image="{{ item.photo.url }}"
